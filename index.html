@@ -14,8 +14,8 @@
             justify-content: center;
             align-items: center;
         }
-        h1,h3{
-            color:maroon;
+        h2{
+            font-weight: bold;
             text-align: center;
         }
         #welcome {
@@ -59,6 +59,66 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        .col-md-3 p::first-letter {
+            font-size: 3em;
+            float: left;
+            padding-right: 0.1em;
+            padding-top: 0.1em;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+        p {
+            font-family: 'Georgia', serif;
+        }
+        .myButton {
+            background-color: maroon;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .myButton:hover {
+            background-color: rgb(102, 1, 1);
+        }
+
+        .myButton:active {
+            background-color: rgb(102, 1, 1);
+            transform: translateY(2px);
+        }
+        .footer {
+            background-color: maroon;
+            color: #eceff3;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 20px;
+            border-top: 1px solid #343a40;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            color: #eceff3;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #f8f9fa;
+        }
+        @media (max-width: 767px) {
+            footer {
+                display: none;
+            }
+        }
+
     </style>
     <script src="sampleJS.js"></script>
 </head>
@@ -69,17 +129,60 @@
         <a class="nav-link" href="about.html">Project</a>
         <a class="nav-link" href="data.html">Chalkboard</a>
         <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="map.html">Map API</a>
+        <a class="nav-link" href="wiki.html">Wiki API</a>
+        <a class="nav-link" href="ochre.html">OCHRE API</a>
     </nav>
     <div class="container">
-    <h1>Hello World!</h1>
-    <h3> Jiaoyang Li's Website</h3>
+    <h2> Welcome to JL's page </h2>
     <p id="welcome">Jiaoyang Li's Portfolio</p>
-    <img class="img-fluid" src="IMG_9915.JPG" width="300" height="200">
-    <div id="minute"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum erat eu dui lobortis, ut tempor turpis bibendum. Pellentesque lacinia mi et semper tristique. Aliquam gravida mauris at enim euismod tincidunt. Duis ut feugiat lectus, id scelerisque nibh.</p>
+            <img class="img-fluid" src="IMG_9915.JPG" width="300" height="200">
+            <button onclick="showAlert()" class="myButton">Click me</button>
+        </div>
+        <div class="col-md-3">
+            <p>Suspendisse potenti. Fusce quis justo eu massa hendrerit egestas. Integer dictum vehicula orci eu faucibus. Sed laoreet nibh ac sapien consectetur, sit amet euismod velit pellentesque. Morbi ut fermentum tellus. Morbi ut fermentum tellus. Morbi ut fermentum tellus. Morbi ut fermentum tellus.</p>
+            <img class="img-fluid" src="image2.png" width="300" height="180">
+            <img class="img-fluid" src="image3.png" width="300" height="220">
+        </div>
+        <div class="col-md-3">
+            <p>Nullam varius nulla nec dui accumsan, eu interdum risus vehicula. Sed imperdiet vel velit eget maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+            <div id="sorted-array"></div>
+            <script>
+                var arr = [5, 3, 8, 1, 4, 2];
+                var sortedArr = parseArray(arr);
+                var sortedArrayElem = document.getElementById("sorted-array");
+                sortedArrayElem.innerHTML = "Sorted Array: " + sortedArr.join(", ");
+            </script>         
+        </div>
+        <div class="col-md-3">
+            <p>Nullam varius nulla nec dui accumsan, eu interdum risus vehicula. Sed imperdiet vel velit eget maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+        </div>
+    <!--<div id="minute"></div>
     <button onclick="displayCurrentMinute()">Get Current Minute</button>
     <button onclick="hideElement()">Hide Element</button>
     <p id="second">This element will be hidden when the button is clicked.</p>
-    <p id="third">This is a helpful class</p>
-    </div>
+    <p id="third">This is a helpful class</p>-->
+    </div>    
 </body>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+         <div class="col-md-6">
+            <h3>Jiaoyang Li</h3>
+            <p>Check out more on my social media</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Links</h3>
+            <ul class="list-unstyled">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Weibo</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
 </html>
